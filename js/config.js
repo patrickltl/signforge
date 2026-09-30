@@ -15,7 +15,7 @@ var SITE_CONFIG = {
   stripePaymentLink: "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE",
 
   /* Displayed price on the landing page and in the upsell card. */
-  price: "$9",
+  price: "HK$70",
 
   /* Where this site is deployed. Used as the link target of the
      "Made with SignForge" badge inside free signatures, and for
