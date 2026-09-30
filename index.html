@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SignForge — Email Signature Generator for Gmail, Outlook &amp; Apple Mail</title>
+  <meta name="description" content="Generate a professional HTML email signature in seconds. Eight email-client-safe templates, live preview and step-by-step install guides for Gmail, Outlook and Apple Mail. Free to start — $9 once, no subscription.">
+  <link rel="canonical" href="https://patrickltl.github.io/signforge/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7C3AED">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237C3AED'/%3E%3Ctext x='16' y='22.5' font-family='Arial' font-size='17' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="SignForge">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SignForge — Email Signature Generator for Gmail, Outlook &amp; Apple Mail">
+  <meta property="og:description" content="Professional HTML email signatures that survive Gmail, Outlook and Apple Mail. Eight templates, live preview, install guides. Free to start — $9 once, no subscription.">
+  <meta property="og:url" content="https://patrickltl.github.io/signforge/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SignForge — Email Signature Generator">
+  <meta name="twitter:description" content="Beautiful HTML email signatures for Gmail, Outlook and Apple Mail. $9 once — no subscription.">
+
+  <!-- Structured data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SignForge",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://patrickltl.github.io/signforge/",
+    "description": "Free HTML email signature generator with eight professional, email-client-safe templates for Gmail, Outlook and Apple Mail. Free to start; $9 one-time lifetime upgrade, no subscription.",
+    "offers": {
+      "@type": "Offer",
+      "price": "9",
+      "priceCurrency": "USD",
+      "description": "One-time lifetime upgrade: all 8 templates, badge removal, unlimited saved signatures, banner and disclaimer support."
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is SignForge free to use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The builder, live preview, copy and download work free with 2 starter templates; free signatures carry a small 'Made with SignForge' line. A $9 one-time upgrade unlocks all 8 templates, removes the badge, and enables banners, disclaimer text and saved signatures — there is no subscription." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install software or create an account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. SignForge runs entirely in your browser. There is no account, no download and nothing to install — your details never leave your device." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which email clients do SignForge signatures work in?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SignForge produces table-based HTML with inline styles and web-safe fonts, which renders reliably in Gmail, Outlook on Windows, Mac and web, Apple Mail, Thunderbird and most other clients. Rounded corners degrade to squares in classic Outlook by design — the layout never breaks." }
+      },
+      {
+        "name": "Why do I need to host images (headshot, logo, banner) at a URL?",
+        "@type": "Question",
+        "acceptedAnswer": { "@type": "Answer", "text": "Email clients block images embedded inside signature HTML (base64/data URIs) for security and size reasons. Use a publicly accessible https:// URL — a company website, CDN or any image host — so recipients can see your headshot, logo or banner." }
+      },
+      {
+        "@type": "Question",
+        "name": "How will my signature look in dark mode?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Honest answer: clients adjust signatures differently in dark mode. Gmail and Apple Mail may dim or invert colors; classic Outlook often leaves colors untouched. SignForge templates use strong contrast and web-safe fonts so they stay readable, but always send yourself a test email and check it in dark mode before rolling it out." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a subscription or recurring fee?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. SignForge is $9 once for lifetime access to every template and pro feature. You keep the signatures you built forever — nothing stops working if you never pay again." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my data stored — is it private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Everything runs client-side. Your details are processed in your browser and never sent to a server. Saved signatures and your license state live in your own browser's localStorage. There is no analytics or tracking on this site." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use SignForge for my whole team?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each person can build their own signature from a shared company template — same accent color and layout, individual names and contact details. The $9 upgrade includes a team rollout guide with tips for keeping every signature consistent." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="js-brand">SignForge</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#templates">Templates</a>
+        <a href="#how">How it works</a>
+        <a href="#compat">Compatibility</a>
+        <a href="#guide">Guide</a>
+        <a href="#faq">FAQ</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <button type="button" class="btn btn-primary btn-small" id="navUnlock">Unlock all — <span class="js-price">$9</span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="hero-kicker">Free generator &middot; <span class="js-price">$9</span> lifetime upgrade &middot; no subscription</span>
+        <h1>Email Signature Generator — <span class="grad">professional HTML signatures</span> for Gmail, Outlook &amp; Apple Mail</h1>
+        <p class="hero-sub">
+          Build a signature that looks designed, not assembled. SignForge renders clean, table-based
+          HTML that survives Gmail, Outlook and Apple Mail — with copy-paste install guides for every client.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-large" href="#builder">Open the builder</a>
+          <a class="btn btn-ghost btn-large" href="#templates">See all 8 templates</a>
+        </div>
+        <ul class="hero-points">
+          <li>No account — runs entirely in your browser</li>
+          <li>Pay once, keep it forever</li>
+          <li>Email-client-safe HTML: tables, inline styles, web-safe fonts</li>
+        </ul>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="sig-frame">
+            <div class="chrome"><span></span><span></span><span></span></div>
+            <div id="heroSig"><!-- sample signature rendered by app.js --></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEMPLATE GALLERY ================= -->
+    <section class="section soft" id="templates">
+      <div class="container">
+        <div class="section-head">
+          <h2>Eight templates. One that fits how you work.</h2>
+          <p>Every template is hand-built as email-safe HTML — no screenshots, no flexbox that Outlook chokes on. The first two are free forever; the rest unlock once for <span class="js-price">$9</span>.</p>
+        </div>
+        <div class="tgrid" id="galleryCards"><!-- rendered by app.js --></div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>From blank to sent in three steps</h2>
+          <p>No account, no credit card, no "we'll email you the download". The signature is built on your screen, in real time.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Fill in your details</h3>
+            <p>Name, role, company, contacts, social links and brand color. The preview updates as you type.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Pick a template</h3>
+            <p>Choose from 8 professional layouts. Tune the accent color, add a headshot or logo if you want one.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Copy &amp; install</h3>
+            <p>One click copies the formatted signature. Follow the step-by-step guide for Gmail, Outlook or Apple Mail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPATIBILITY ================= -->
+    <section class="section soft" id="compat">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built for the clients people actually use</h2>
+          <p>Email clients are all different. SignForge plays it safe on purpose.</p>
+        </div>
+        <div class="compat-grid">
+          <div class="compat-card">
+            <h3>Gmail</h3>
+            <p>Renders table-based HTML reliably. Templates stay under Gmail's 10,000-character signature cap — a live counter shows you how much room you have.</p>
+          </div>
+          <div class="compat-card">
+            <h3>Outlook (Windows, Mac &amp; web)</h3>
+            <p>Classic Outlook renders with Microsoft Word's engine. That's why SignForge uses only tables, inline styles and web-safe fonts — the parts Outlook never breaks.</p>
+          </div>
+          <div class="compat-card">
+            <h3>Apple Mail</h3>
+            <p>Renders modern touches like rounded photo corners. The install guide covers the one checkbox that strips formatting if you miss it.</p>
+          </div>
+          <div class="compat-card">
+            <h3>Thunderbird &amp; others</h3>
+            <p>Plain table HTML with absolute image URLs works anywhere HTML signatures are supported. Paste or import the downloaded .html file.</p>
+          </div>
+        </div>
+        <p class="compat-note">
+          <strong>An honest note about dark mode:</strong> Gmail, Apple Mail and Outlook each adjust signature colors
+          differently when the reader's device uses dark mode — some dim, some invert, some leave everything alone.
+          No generator can promise pixel-identical dark-mode rendering. SignForge templates use high-contrast,
+          web-safe colors so they stay readable in every case. Always send yourself a test email before rolling a signature out.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= BUILDER ================= -->
+    <section class="section" id="builder">
+      <div class="container">
+        <div class="section-head">
+          <h2>The builder</h2>
+          <p>Everything updates live. Nothing leaves your browser.</p>
+        </div>
+
+        <div class="builder-layout">
+          <!-- ===== left: form ===== -->
+          <div>
+            <form class="panel" id="builderForm" onsubmit="return false;">
+              <h3>Your details</h3>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="f-name">Full name</label>
+                  <input type="text" id="f-name" autocomplete="name" placeholder="Ava Chen">
+                </div>
+                <div class="field">
+                  <label for="f-role">Role / title</label>
+                  <input type="text" id="f-role" placeholder="Product Designer">
+                </div>
+                <div class="field">
+                  <label for="f-company">Company</label>
+                  <input type="text" id="f-company" autocomplete="organization" placeholder="Northwind Studio">
+                </div>
+                <div class="field">
+                  <label for="f-email">Email</label>
+                  <input type="email" id="f-email" autocomplete="email" placeholder="ava@northwind.studio">
+                </div>
+                <div class="field">
+                  <label for="f-phone">Phone</label>
+                  <input type="tel" id="f-phone" autocomplete="tel" placeholder="+1 (555) 010-2030">
+                </div>
+                <div class="field">
+                  <label for="f-mobile">Mobile</label>
+                  <input type="tel" id="f-mobile" placeholder="+1 (555) 010-7788">
+                </div>
+                <div class="field">
+                  <label for="f-website">Website</label>
+                  <input type="url" id="f-website" placeholder="northwind.studio">
+                </div>
+                <div class="field">
+                  <label for="f-address">Address line</label>
+                  <input type="text" id="f-address" placeholder="88 Harbor Lane, Portland, OR">
+                </div>
+                <div class="field full">
+                  <label for="f-headshot">Headshot image URL <small>Optional. Use a hosted https:// URL — most email clients block embedded images.</small></label>
+                  <input type="url" id="f-headshot" inputmode="url" placeholder="https://your-site.com/photos/ava.jpg">
+                </div>
+                <div class="field full">
+                  <label for="f-logo">Logo image URL <small>Optional, https:// hosted.</small></label>
+                  <input type="url" id="f-logo" inputmode="url" placeholder="https://your-site.com/logo.png">
+                </div>
+                <div class="field full">
+                  <label for="socialRows-label">Social links <small>Add the ones you actually use — links render as clean text links that every client supports.</small></label>
+                </div>
+                <div class="field full" id="socialRows" aria-label="Social links"></div>
+                <div class="field full">
+                  <button type="button" class="btn btn-ghost btn-small" id="addSocial">+ Add social link</button>
+                </div>
+                <div class="field">
+                  <label for="f-accent">Brand accent color</label>
+                  <div class="accent-row">
+                    <input type="color" id="f-accent" value="#7C3AED">
+                    <input type="text" id="f-accent-hex" value="#7C3AED" maxlength="7" aria-label="Accent color hex value">
+                  </div>
+                </div>
+              </div>
+
+              <h3 style="margin-top:26px;">Pro finishing touches</h3>
+              <div class="field-grid">
+                <div class="field full pro-field" id="bannerField">
+                  <label for="f-banner">Banner image URL <span class="chip chip-mini">PRO</span></label>
+                  <input type="url" id="f-banner" inputmode="url" placeholder="https://your-site.com/banners/promo.png">
+                </div>
+                <div class="field full pro-field" id="disclaimerField">
+                  <label for="f-disclaimer">Legal disclaimer / footer line <span class="chip chip-mini">PRO</span></label>
+                  <textarea id="f-disclaimer" placeholder="This email and any attachments are confidential and intended solely for the named recipient…"></textarea>
+                </div>
+              </div>
+            </form>
+
+            <div class="panel">
+              <h3>Template</h3>
+              <div class="template-grid" id="templateCards"><!-- rendered by app.js --></div>
+            </div>
+
+            <div class="upsell" id="upsellCard">
+              <h3>All 8 templates. <span class="js-price">$9</span> once. No subscription.</h3>
+              <p>Upgrade once and every feature on this page is yours for good:</p>
+              <ul>
+                <li>All 8 templates, including Meridian, Duet, Summit, Emblem, Mono &amp; Pinnacle</li>
+                <li>"Made with SignForge" badge removed from your signatures</li>
+                <li>Unlimited saved signatures with load &amp; duplicate</li>
+                <li>Banner image and legal disclaimer support</li>
+                <li>Team rollout guide with consistency tips</li>
+              </ul>
+              <a class="btn btn-white btn-large js-upgrade" href="#">Upgrade — <span class="js-price">$9</span> one time</a>
+              <p class="upsell-fine">One-time payment. No account. Your license key works in this browser forever.</p>
+            </div>
+
+            <div class="pro-active-note" id="proActiveNote" hidden>
+              &#10003; Pro is active in this browser. Everything is unlocked.
+            </div>
+          </div>
+
+          <!-- ===== right: preview ===== -->
+          <div class="preview-sticky">
+            <div class="panel">
+              <h3>Live preview</h3>
+              <div class="tabs" role="group" aria-label="Client rendering notes">
+                <button type="button" class="ptab active" data-client="preview" aria-pressed="true">Preview</button>
+                <button type="button" class="ptab" data-client="gmail" aria-pressed="false">Gmail</button>
+                <button type="button" class="ptab" data-client="outlook" aria-pressed="false">Outlook</button>
+                <button type="button" class="ptab" data-client="apple" aria-pressed="false">Apple Mail</button>
+              </div>
+              <div class="preview-card-wrap">
+                <div id="previewCard" aria-live="polite"></div>
+              </div>
+              <div class="preview-meta">
+                <span id="previewTemplateName">Aurora &middot; Free template</span>
+                <span id="charCount">0 / 10,000 characters (Gmail signature limit)</span>
+              </div>
+              <p class="client-note" id="clientNote">Exact rendering of your signature HTML.</p>
+              <div class="preview-actions">
+                <button type="button" class="btn btn-primary" id="copyBtn">Copy signature</button>
+                <button type="button" class="btn btn-ghost" id="downloadBtn">Download .html</button>
+                <button type="button" class="btn btn-ghost" id="guideBtn">Install guides</button>
+              </div>
+            </div>
+
+            <div class="panel saved-panel" id="savedPanel">
+              <h3>Saved signatures <span class="chip">PRO</span></h3>
+              <div class="preview-actions" style="margin-top:0;">
+                <button type="button" class="btn btn-ghost btn-small" id="saveBtn">Save signature</button>
+                <button type="button" class="btn btn-ghost btn-small" id="unlockOpenBtn">Already have a key?</button>
+              </div>
+              <div id="savedList" style="margin-top:14px;"></div>
+              <div class="gate-overlay">
+                <span class="chip chip-lock">PRO</span>
+                <span>Save, load and duplicate signatures with the one-time upgrade.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GUIDE ================= -->
+    <section class="section soft" id="guide">
+      <div class="container">
+        <div class="section-head">
+          <h2>The complete guide to HTML email signature generators</h2>
+          <p>What actually works in Gmail, Outlook and Apple Mail — and why most "email signature generators" produce signatures that fall apart.</p>
+        </div>
+
+        <article class="article">
+          <h2>What an HTML email signature generator actually does</h2>
+          <p>
+            An <strong>HTML email signature generator</strong> turns a form full of details — your name, title, company,
+            phone numbers and links — into a small block of HTML that your email client appends to every message.
+            The catch is that email is not a browser. Gmail, Outlook and Apple Mail each strip, rewrite or ignore
+            parts of modern HTML, so a signature that looks perfect in Chrome can arrive as a pile of misaligned
+            text in a colleague's Outlook. A good generator therefore does two jobs at once: it makes the signature
+            look good, and it writes HTML that <em>survives</em> the trip through real email clients.
+          </p>
+          <p>
+            SignForge does the second job seriously. Every template is built from nested <code>&lt;table&gt;</code> elements
+            with inline styles only — no external CSS, no flexbox, no grid, no JavaScript — because that is the
+            subset of HTML that every client from Gmail to twenty-year-old Outlook builds correctly. Images always
+            use absolute <code>https://</code> URLs, and fonts fall back to web-safe stacks like Arial. That is unglamorous
+            engineering, and it is exactly why the signatures hold their shape.
+          </p>
+
+          <h2>Using an email signature generator with Gmail</h2>
+          <p>
+            If you searched for an <strong>email signature generator for Gmail</strong>, here is what matters. Gmail stores
+            signatures in your account settings, not as a file, so installation is a copy-paste into the signature
+            editor: open Gmail on desktop, click the gear, choose <em>See all settings</em>, and scroll to the
+            <em>Signature</em> section on the General tab. Create a new signature, click into the box, and paste —
+            a rich-text paste carries the formatted HTML across, which is why SignForge's copy button copies
+            <em>formatted</em> content rather than raw code.
+          </p>
+          <p>
+            Two Gmail quirks are worth knowing. First, Gmail caps signatures at 10,000 characters; SignForge shows
+            a live counter under the preview so you never hit the limit silently. Second, Gmail on mobile can be
+            set to use the same signature as desktop, but check the "signature defaults" toggles for new emails
+            versus replies. The full, click-by-click walkthrough is in the Install guides modal inside the builder.
+          </p>
+
+          <h2>Outlook is why you need a different kind of generator</h2>
+          <p>
+            People searching for an <strong>Outlook email signature generator</strong> usually got burned before: they built a
+            beautiful signature, pasted it into Outlook, and watched the layout collapse. The reason is that classic
+            Outlook on Windows renders email through Microsoft Word's HTML engine, which ignores huge parts of
+            modern CSS — flexbox, grid, background images, max-width and custom fonts all behave badly or vanish.
+          </p>
+          <p>
+            SignForge's templates are designed around Word's limitations rather than fighting them. Layouts use
+            table cells for structure, spacing comes from cell padding instead of margins, and color arrives through
+            inline styles that Word respects. Rounded photo corners quietly become squares in classic Outlook —
+            a graceful degradation, not a broken signature. The Install guides modal covers Outlook on Windows,
+            Mac and the web separately, because each has its own settings path.
+          </p>
+
+          <h2>Why table-based HTML wins</h2>
+          <p>
+            There is a reason email designers still say "tables and inline styles" like a mantra. Webmail clients
+            sanitize your HTML: Gmail removes <code>&lt;style&gt;</code> blocks and some attributes, Outlook rewrites spacing,
+            Apple Mail reflows at different window widths. Table rows and columns with explicit widths and inline
+            styles are the one layout system every client agrees on. When you download a signature from SignForge,
+            open the .html file and view its source — you will see clean, hand-shaped table markup you can host,
+            edit or reuse anywhere, with no dependencies.
+          </p>
+
+          <h2>Images: hosting, URLs and why pastes break</h2>
+          <p>
+            Headshots, logos and banners must be hosted somewhere the recipient's client can reach — a URL that
+            starts with <code>https://</code>. Embedded (base64) images are blocked by most clients, and images attached to
+            the email never survive the signature format. Good free options for hosting: your own website's media
+            library, a CDN, or any reputable image host. Keep images small (a headshot around 200&times;200 pixels is plenty),
+            because every recipient downloads them. If a signature ever shows a broken-image box, the first thing
+            to check is whether the URL is public — open it in an incognito window to test.
+          </p>
+
+          <h2>Dark mode, contrast and accessibility</h2>
+          <p>
+            In dark mode, clients treat signatures differently: Gmail and Apple Mail may dim or partially invert
+            colors, while classic Outlook often leaves them untouched. Nobody can promise pixel-identical dark-mode
+            rendering — any generator claiming otherwise is guessing. What you can control is contrast. SignForge's
+            palettes pair dark ink text with bright accents, so a dimmed signature still reads clearly. Send yourself
+            a test email and view it with dark mode on before you roll a signature out to a team.
+          </p>
+
+          <h2>Subscriptions versus paying once</h2>
+          <p>
+            Most signature tools charge a monthly subscription — roughly $5 to $12 per person, per month, forever —
+            for what is ultimately a static block of HTML. That made more sense when editors ran on servers and
+            needed accounts. SignForge runs entirely in your browser: there is no account, no server and no reason
+            to bill monthly. The builder and two starter templates are free, with a small "Made with SignForge"
+            line in the signature. If you want all eight templates, banner and disclaimer support, saved signatures
+            and the badge removed, it is <strong>$9 once</strong> — and the signatures you made keep working forever.
+          </p>
+
+          <h2>Pre-flight checklist</h2>
+          <ul>
+            <li><strong>Test email first.</strong> Send your new signature to yourself and to a colleague on a different client.</li>
+            <li><strong>Check dark mode.</strong> View the test with dark mode enabled on your phone.</li>
+            <li><strong>Verify links.</strong> Every phone number, email address and social link should resolve correctly.</li>
+            <li><strong>Keep images small and public.</strong> Hosted at <code>https://</code>, visible in an incognito window.</li>
+            <li><strong>Stay under Gmail's limit.</strong> The character counter under the preview has you covered.</li>
+            <li><strong>Stay consistent.</strong> Teams look sharpest when everyone uses the same template and accent color.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Is SignForge free to use?</summary>
+            <p class="faq-a">Yes. The builder, live preview, copy and download work free with 2 starter templates; free signatures carry a small "Made with SignForge" line. A $9 one-time upgrade unlocks all 8 templates, removes the badge, and enables banners, disclaimer text and saved signatures — there is no subscription.</p>
+          </details>
+          <details>
+            <summary>Do I need to install software or create an account?</summary>
+            <p class="faq-a">No. SignForge runs entirely in your browser. There is no account, no download and nothing to install — your details never leave your device.</p>
+          </details>
+          <details>
+            <summary>Which email clients do SignForge signatures work in?</summary>
+            <p class="faq-a">SignForge produces table-based HTML with inline styles and web-safe fonts, which renders reliably in Gmail, Outlook on Windows, Mac and web, Apple Mail, Thunderbird and most other clients. Rounded corners degrade to squares in classic Outlook by design — the layout never breaks.</p>
+          </details>
+          <details>
+            <summary>Why do I need to host images (headshot, logo, banner) at a URL?</summary>
+            <p class="faq-a">Email clients block images embedded inside signature HTML (base64/data URIs) for security and size reasons. Use a publicly accessible https:// URL — a company website, CDN or any image host — so recipients can see your headshot, logo or banner.</p>
+          </details>
+          <details>
+            <summary>How will my signature look in dark mode?</summary>
+            <p class="faq-a">Honest answer: clients adjust signatures differently in dark mode. Gmail and Apple Mail may dim or invert colors; classic Outlook often leaves colors untouched. SignForge templates use strong contrast and web-safe fonts so they stay readable, but always send yourself a test email and check it in dark mode before rolling it out.</p>
+          </details>
+          <details>
+            <summary>Is there a subscription or recurring fee?</summary>
+            <p class="faq-a">No. SignForge is $9 once for lifetime access to every template and pro feature. You keep the signatures you built forever — nothing stops working if you never pay again.</p>
+          </details>
+          <details>
+            <summary>Where is my data stored — is it private?</summary>
+            <p class="faq-a">Everything runs client-side. Your details are processed in your browser and never sent to a server. Saved signatures and your license state live in your own browser's localStorage. There is no analytics or tracking on this site.</p>
+          </details>
+          <details>
+            <summary>Can I use SignForge for my whole team?</summary>
+            <p class="faq-a">Yes. Each person can build their own signature from a shared company template — same accent color and layout, individual names and contact details. The $9 upgrade includes a team rollout guide with tips for keeping every signature consistent.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section class="section soft" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple pricing. Once.</h2>
+          <p>Two starter templates free, forever. Everything else is a single payment — not a monthly one.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Free</h3>
+            <div class="price-amount">$0<small> forever</small></div>
+            <ul>
+              <li>2 professional templates (Aurora &amp; Slate)</li>
+              <li>Live preview with client rendering notes</li>
+              <li>Rich-HTML copy &amp; .html download</li>
+              <li>Step-by-step install guides for Gmail, Outlook &amp; Apple Mail</li>
+              <li>Accent color, social links, headshot &amp; logo</li>
+              <li class="na">Small "Made with SignForge" line in the signature</li>
+            </ul>
+            <a class="btn btn-ghost" href="#builder">Start building</a>
+          </div>
+          <div class="price-card featured">
+            <span class="price-flag">Lifetime deal</span>
+            <h3>Pro</h3>
+            <div class="price-amount"><span class="js-price">$9</span><small> once — no subscription</small></div>
+            <ul>
+              <li>All 8 templates, present and future</li>
+              <li>"Made with SignForge" badge removed</li>
+              <li>Unlimited saved signatures (load &amp; duplicate)</li>
+              <li>Banner image support</li>
+              <li>Legal disclaimer / footer line</li>
+              <li>Team rollout guide</li>
+            </ul>
+            <a class="btn btn-primary js-upgrade" href="#">Upgrade — <span class="js-price">$9</span> once</a>
+            <p class="price-fine">Pay once on Stripe, receive your license key by email, unlock this browser forever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#home" style="margin-bottom:12px;">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span class="js-brand">SignForge</span>
+          </a>
+          <p>Professional HTML email signature generator for Gmail, Outlook and Apple Mail. Table-based, inline-styled, email-client-safe — with a one-time price instead of a subscription.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#templates">Templates</a></li>
+            <li><a href="#builder">Builder</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#guide">Signature guide</a></li>
+            <li><a href="#compat">Client compatibility</a></li>
+            <li><a href="#builder">Install guides</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> <span class="js-brand">SignForge</span>. All rights reserved.</span>
+        <span>Privacy: SignForge runs 100% in your browser. Your details, images and signatures never leave your device — there is no server, no account and no analytics. Saved signatures are stored only in your browser's local storage.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= UNLOCK MODAL ================= -->
+  <div class="modal" id="unlockModal" role="dialog" aria-modal="true" aria-labelledby="unlockTitle" aria-hidden="true">
+    <div class="modal-panel">
+      <button type="button" class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="unlockTitle">Unlock everything — <span class="js-price">$9</span> once</h3>
+      <p class="modal-sub">All 8 templates, badge removal, saved signatures, banner and disclaimer support. Pay once, keep forever.</p>
+      <a class="btn btn-primary btn-large js-upgrade" href="#" style="width:100%;">Pay <span class="js-price">$9</span> once on Stripe &rarr;</a>
+      <p style="font-size:0.82rem;color:var(--faint);margin:10px 0 0;">After payment you'll receive a license key by email. Enter it below to unlock.</p>
+      <div class="modal-divider">Have a license key?</div>
+      <form id="unlockForm" novalidate>
+        <div class="field">
+          <label for="unlockEmail">Email used at purchase</label>
+          <input type="email" id="unlockEmail" autocomplete="email" placeholder="you@company.com" required>
+        </div>
+        <div class="field">
+          <label for="unlockKey">License key <small>Looks like XXXX-XXXX.</small></label>
+          <input type="text" id="unlockKey" placeholder="A1B2-C3D4" autocapitalize="characters" autocomplete="off" required>
+        </div>
+        <p class="form-error" id="unlockError" hidden></p>
+        <button type="submit" class="btn btn-ghost">Unlock now</button>
+      </form>
+      <div class="modal-divider">or</div>
+      <button type="button" class="demo-btn" id="demoBtn">Try everything free for 24 hours (demo mode)</button>
+    </div>
+  </div>
+
+  <!-- ================= INSTALL GUIDES MODAL ================= -->
+  <div class="modal" id="guidesModal" role="dialog" aria-modal="true" aria-labelledby="guidesTitle" aria-hidden="true">
+    <div class="modal-panel">
+      <button type="button" class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="guidesTitle">Install your signature</h3>
+      <p class="modal-sub">Press "Copy signature" first, then follow the steps for your client. The formatted HTML comes across with a normal paste.</p>
+
+      <details class="guide-block" open>
+        <summary>Gmail (web)</summary>
+        <ol>
+          <li>Open Gmail on your computer, click the gear icon (top right) and choose <strong>See all settings</strong>.</li>
+          <li>Stay on the <strong>General</strong> tab and scroll down to the <strong>Signature</strong> section.</li>
+          <li>Click <strong>Create new</strong> and give it a name (e.g. "Main").</li>
+          <li>Click <strong>Copy signature</strong> in SignForge, click inside the Gmail signature box, and paste (Ctrl+V / Cmd+V).</li>
+          <li>Below the editor, set the new signature under <strong>For new emails use</strong> and <strong>On reply/forward use</strong>.</li>
+          <li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
+        </ol>
+        <p class="guide-tip">Tip: Gmail caps signatures at 10,000 characters. The counter under the SignForge preview shows you're well within it.</p>
+      </details>
+
+      <details class="guide-block">
+        <summary>Outlook (Windows, classic desktop)</summary>
+        <ol>
+          <li>Open Outlook and go to <strong>File &gt; Options &gt; Mail</strong>.</li>
+          <li>Click the <strong>Signatures&hellip;</strong> button.</li>
+          <li>Click <strong>New</strong>, name the signature, then click inside the <strong>Edit signature</strong> box.</li>
+          <li>Press <strong>Copy signature</strong> in SignForge and paste into the box (Ctrl+V).</li>
+          <li>Under <strong>Choose default signature</strong>, assign it to your account for new messages and replies/forwards.</li>
+          <li>Click <strong>OK</strong>, then <strong>OK</strong> again to finish.</li>
+        </ol>
+        <p class="guide-tip">Tip: Outlook for Windows renders with Word's engine — SignForge templates are already built for that, so paste as-is and don't re-style it.</p>
+      </details>
+
+      <details class="guide-block">
+        <summary>Outlook on the web</summary>
+        <ol>
+          <li>Click the gear icon, then <strong>Mail</strong> &gt; <strong>Compose and reply</strong>.</li>
+          <li>Under <strong>Email signature</strong>, click into the editor and paste (Ctrl+V / Cmd+V).</li>
+          <li>Choose whether to add it automatically to new messages and replies.</li>
+          <li>Click <strong>Save</strong>.</li>
+        </ol>
+      </details>
+
+      <details class="guide-block">
+        <summary>Outlook (Mac)</summary>
+        <ol>
+          <li>Open Outlook and go to the <strong>Outlook</strong> menu &gt; <strong>Preferences</strong> (or Settings) &gt; <strong>Signatures</strong>.</li>
+          <li>Select your account and click <strong>+</strong> to add a new signature.</li>
+          <li>If <strong>Always match my default message font</strong> is checked, uncheck it first — otherwise your formatting gets stripped.</li>
+          <li>Click inside the editor and paste (Cmd+V).</li>
+          <li>Set it as default under <strong>Default signatures</strong>, then close the window.</li>
+        </ol>
+      </details>
+
+      <details class="guide-block">
+        <summary>Apple Mail (macOS)</summary>
+        <ol>
+          <li>Open <strong>Mail</strong> and go to <strong>Mail &gt; Settings</strong> (called Preferences on older macOS) &gt; <strong>Signatures</strong>.</li>
+          <li>Select your email account in the middle column, then click <strong>+</strong> to create a signature.</li>
+          <li>Uncheck <strong>Always match my default font</strong> — this is the one checkbox that strips your formatting.</li>
+          <li>Click inside the signature editor on the right, then paste (Cmd+V).</li>
+          <li>Drag the signature in the middle column to set the default order for new messages vs replies.</li>
+        </ol>
+        <p class="guide-tip">Tip: if the paste looks plain, click into the editor again and paste once more — Mail occasionally needs a second paste when the editor wasn't focused.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- ================= TOAST ================= -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/license.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
