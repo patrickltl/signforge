@@ -12,7 +12,7 @@ var SITE_CONFIG = {
      "https://buy.stripe.com/xxxxxxxx"). While it still says
      PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE, the upgrade button
      will politely tell the owner the link is not set. */
-  stripePaymentLink: "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE",
+  stripePaymentLink: "https://buy.stripe.com/28EaEXg3i52q5Mz04M7Vm06",
 
   /* Displayed price on the landing page and in the upsell card. */
   price: "HK$70",
